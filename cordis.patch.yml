@@ -1,0 +1,20 @@
+- insert:
+    - id: speech-to-text
+      name: '@deepseek-ai/dsh-experimental-speech-to-text'
+      config:
+        defaultProvider: whisper-es
+        language: es
+    - id: api-speech-to-text
+      name: '@deepseek-ai/dsh-experimental-api-speech-to-text'
+    - id: ui-voice-input
+      name: '@deepseek-ai/dsh-experimental-client-ui-voice-input'
+    - id: whisper-es
+      name: '@local/dsh-voice-input-es'
+      config:
+        dataRoot: !!js dshHomePath('speech-to-text', 'whisper')
+        python: 'C:\Users\Toni\AppData\Local\Programs\Python\Python312\python.exe'
+        device: cuda
+        computeType: float16
+        model: large-v3-turbo
+        beamSize: 1
+        idleTimeoutMs: 1800000
