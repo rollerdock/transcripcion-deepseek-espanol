@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Spanish voice input (Whisper)",
+    "description": "Records your voice and transcribes it to Spanish using a local Whisper large-v3 model."
+  }
+}
