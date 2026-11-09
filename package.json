@@ -1,0 +1,59 @@
+{
+  "name": "@local/dsh-voice-input-es",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Entrada por voz en español para DeepSeek Harness: transcripción local rápida con faster-whisper (Whisper large-v3-turbo) y aceleración por GPU CUDA.",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "bundle",
+    "voice",
+    "dictation",
+    "speech-to-text",
+    "whisper",
+    "faster-whisper",
+    "spanish",
+    "espanol",
+    "cuda",
+    "gpu"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rollerdock/transcripcion-deepseek-espanol.git"
+  },
+  "homepage": "https://github.com/rollerdock/transcripcion-deepseek-espanol#readme",
+  "bugs": {
+    "url": "https://github.com/rollerdock/transcripcion-deepseek-espanol/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "worker.py",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-experimental-client-ui-voice-input",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}
