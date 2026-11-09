@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Entrada por voz en español (Whisper)",
+    "description": "Graba tu voz y la transcribe al español usando un modelo local Whisper large-v3."
+  }
+}
